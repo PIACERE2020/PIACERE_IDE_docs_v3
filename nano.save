@@ -1,0 +1,7 @@
+version: 2
+
+buid:
+  image: testing
+
+sphinx:
+  configuration: https://git.code.tecnalia.com/piacere/public/ide.git

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piacere IDE Implmementation &mdash; User_Manual_IDE 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User Manual" href="manual.html" />
+    <link rel="prev" title="Piacere ide" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> User_Manual_IDE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Piacere IDE Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#technical-description">Technical description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ide-integration-mechanism">IDE Integration mechanism</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#components-description">Components description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eclipse-base">Eclipse base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmf-runtime">GMF Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphiti">Graphiti</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sirius">Sirius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acceleo">Acceleo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atl">ATL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qvto">QVTo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uml2">UML2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m2e">M2E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#papyrus">Papyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#egit">EGit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xtext">Xtext</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download IDE</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">User_Manual_IDE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Piacere IDE Implmementation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/implementation.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="piacere-ide-implmementation">
+<h1>Piacere IDE Implmementation<a class="headerlink" href="#piacere-ide-implmementation" title="Permalink to this heading"></a></h1>
+<section id="technical-description">
+<h2>Technical description<a class="headerlink" href="#technical-description" title="Permalink to this heading"></a></h2>
+<p>The Eclipse IDE is an Eclipse Rich Client Platform (RCP) application. The core functionalities of the Eclipse IDE are provided via plug-ins (components). The PIACERE IDE functionality is based on the concept of extensions and extension points.</p>
+<p>To build the IDE some Eclipse modelling plugins should be added. Later, a list of these plugins will be provided with an explanation of the functionality provided by each one. This is only an initial list that could vary during the development of the IDE.
+Thanks to EMF, the IDE will support metamodels. In the case of the PIACERE IDE, DOML and DOML-E will be the supported metamodels used for modelling application infrastructures.</p>
+<section id="ide-integration-mechanism">
+<h3>IDE Integration mechanism<a class="headerlink" href="#ide-integration-mechanism" title="Permalink to this heading"></a></h3>
+<p>The pivotal tool of the project will be the IDE and it will give support to the PIACERE Framework. The other Key Results of the project will be integrated into the IDE using some of the integration mechanism that these technologies provide. The PIACERE IDE will be customized with suitable plug-ins that will integrate the different tools, to minimize the learning curve and simplify adoption of IaC approach. Not all KR/tools will be integrated in the same way. Several integration patterns, focusing on the Eclipse plugin architecture, will be defined. They will allow the implementation and incorporation of application features very quickly.</p>
+<p>To integrate the other piacere KR into the IDE, a set of menus will be enabled to facilitate access to these KRs. Some of these tools could be fully integrated into Eclipse and should be developed as Eclipse plugins. On the other hand, other tools could be run in isolation and through a REST API or any other integration mechanism could be invoked remotely. In this case, from the Eclipse menu the tool would be invoked via a REST service.</p>
+<p><img alt="ecomp" src="_images/Ecomponents.png" /></p>
+<p>The IDE will use “Cheat sheets”, which is a built-in mechanism for displaying mini tutorials “Wizards”, to guide users on how to use the different tools. Cheat sheets are quick-and-dirty instructions for how to perform multi-step processes in Eclipse, displayed on the side of the workbench where you can quickly and easily step through them.</p>
+</section>
+</section>
+<section id="components-description">
+<h2>Components description<a class="headerlink" href="#components-description" title="Permalink to this heading"></a></h2>
+<p>This section lists some modelling plugins that could be interesting for building the Piacere IDE.</p>
+<section id="eclipse-base">
+<h3>Eclipse base<a class="headerlink" href="#eclipse-base" title="Permalink to this heading"></a></h3>
+<p>These plugins are the core of Eclipse  and involve the minimum plugin set to build an executable desktop application.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of these plugins is 4.21.</p>
+</div>
+</section>
+<section id="gmf-runtime">
+<h3>GMF Runtime<a class="headerlink" href="#gmf-runtime" title="Permalink to this heading"></a></h3>
+<p><img alt="gmf" src="_images/gmf.png" /></p>
+<p>Graphical Modelling Framework is the most used library to develop graphical editors on Eclipse. It is based on EMF models, and generates EMF based models too.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of GMF is &gt;= 1.9.0.</p>
+</div>
+</section>
+<section id="graphiti">
+<h3>Graphiti<a class="headerlink" href="#graphiti" title="Permalink to this heading"></a></h3>
+<p>Graphiti is another library for developing graphical editors on Eclipse, which enables rapid development of state-of-the-art diagram editors for domain models</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of Graphiti is 0.12.0.</p>
+</div>
+<p><img alt="graphiti" src="_images/graphiti.png" /></p>
+</section>
+<section id="sirius">
+<h3>Sirius<a class="headerlink" href="#sirius" title="Permalink to this heading"></a></h3>
+<p><img alt="sirius" src="_images/sirius.png" /></p>
+<p>Sirius is a tool based on EMF and GMF that allows to easily create graphical modelling workbenches. A modelling workbench created with Sirius is composed of a set of Eclipse editors (diagrams, tables, and trees) which allow the users to create, edit and visualize EMF models.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of Sirius is 6.5.1.</p>
+</div>
+</section>
+<section id="acceleo">
+<h3>Acceleo<a class="headerlink" href="#acceleo" title="Permalink to this heading"></a></h3>
+<p>Acceleo is a template-based technology to create code generators from an EMF model, which has been designed to be customizable, interoperable, and easy to kick-start.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of Acceleo is 3.7.</p>
+</div>
+<p><img alt="acceleo" src="_images/acceleo.png" /></p>
+</section>
+<section id="atl">
+<h3>ATL<a class="headerlink" href="#atl" title="Permalink to this heading"></a></h3>
+<p>ATL is a model transformation-oriented language that helps to convert a model defined in a Domain Specific Language (DSL) into another model defined in a distinct (or not) DSL. These include some sample ATL transformations, an ATL transformation engine, and an IDE for ATL.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of ATL is 4.5.0.</p>
+</div>
+<p><img alt="alt" src="_images/alt.png" /></p>
+</section>
+<section id="qvto">
+<h3>QVTo<a class="headerlink" href="#qvto" title="Permalink to this heading"></a></h3>
+<p>QVTO is another language that provides features to implement transformations between models. Eclipse QVTo is the only actively maintained QVTo implementation, and so conversely, QVT 1.2 has evolved to resolve issues uncovered by Eclipse QVTo and its users.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of QVTo is 3.10.5.</p>
+</div>
+</section>
+<section id="uml2">
+<h3>UML2<a class="headerlink" href="#uml2" title="Permalink to this heading"></a></h3>
+<p>Eclipse UML2 is a set of plugins based on EMF that brings support to UML OMG Metamodel in Eclipse. Although UML2 provides the metamodel, it does not provide UML modelling tools itself. It is the base of other important projects like Papyrus, which incorporates these kinds of tools.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of UML2 is 5.5.2.</p>
+</div>
+</section>
+<section id="m2e">
+<h3>M2E<a class="headerlink" href="#m2e" title="Permalink to this heading"></a></h3>
+<p>The M2Eclipse, or M2E plugin provides Apache Maven functionality into Eclipse. It allows building projects based on Maven within Eclipse, as well as integrated dependency management and other features.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of M2E is 1.19.0.</p>
+</div>
+</section>
+<section id="papyrus">
+<h3>Papyrus<a class="headerlink" href="#papyrus" title="Permalink to this heading"></a></h3>
+<p>Papyrus is the most popular open-source environment for editing UML models based on EMF for Eclipse. It provides many editors such as the Class diagram editor, Activity diagram editor, State Machine diagram editor, Components diagram editor, Profile diagram editor, etc.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of Papyrus is 5.2.0.</p>
+</div>
+<p><img alt="papyrus" src="_images/papyrus.png" /></p>
+</section>
+<section id="egit">
+<h3>EGit<a class="headerlink" href="#egit" title="Permalink to this heading"></a></h3>
+<p>EGit is a set of plugins that enables to connect to GIT source code repositories.</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of EGit is 5.13.0.</p>
+</div>
+<p><img alt="egit" src="_images/egit.png" /></p>
+</section>
+<section id="xtext">
+<h3>Xtext<a class="headerlink" href="#xtext" title="Permalink to this heading"></a></h3>
+<p>Xtext is a framework for development of programming languages and domain-specific languages. With Xtext you define your language using a powerful grammar language. As a result, you get a full infrastructure, including parser, linker, type checker, compiler as well as editing support for Eclipse, any editor that supports the Language Server Protocol and your favourite web browser</p>
+<div class="tip admonition">
+<p class="admonition-title">Current version</p>
+<p>The current version of Xtext is 2.25.0.</p>
+</div>
+<p><img alt="xtext" src="_images/xtext.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Piacere ide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="manual.html" class="btn btn-neutral float-right" title="User Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Prodevelop.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

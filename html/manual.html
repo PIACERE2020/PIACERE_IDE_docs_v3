@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Manual &mdash; User_Manual_IDE 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Download" href="download.html" />
+    <link rel="prev" title="Piacere IDE Implmementation" href="implementation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> User_Manual_IDE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Piacere IDE Implementation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requeriments">Requeriments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#first-look-and-set-up">First look and Set Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ide-usage">IDE usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#model-files">Model files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimization-kr9">Optimization (KR9)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validation-kr5">Validation (KR5)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-generator-kr3">Code Generator (KR3)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security-scan-kr6-kr7">Security scan (KR6 &amp; KR7)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canary-sandbox-environment-kr8">Canary Sandbox Environment (KR8)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#infrastructure-elements-catalogue">Infrastructure Elements Catalogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runtime-controller-kr11-kr12">Runtime Controller (KR11 &amp; KR12)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphic-representation">Graphic representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download IDE</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">User_Manual_IDE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>User Manual</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/manual.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-manual">
+<h1>User Manual<a class="headerlink" href="#user-manual" title="Permalink to this heading"></a></h1>
+<section id="requeriments">
+<h2>Requeriments<a class="headerlink" href="#requeriments" title="Permalink to this heading"></a></h2>
+<p><strong>Minimum Requeriments:</strong> Java JRE 11+.</p>
+</section>
+<section id="first-look-and-set-up">
+<h2>First look and Set Up<a class="headerlink" href="#first-look-and-set-up" title="Permalink to this heading"></a></h2>
+<p>When the PIACERE IDE opens, you can see this window.</p>
+<p><img alt="vprin" src="_images/Ventana_principal.png" /></p>
+<p>In this window, we can see the PIACERE menu embedded in the eclipse toolbar. Furthermore, this IDE have a custom view for PIACERE modelling. We can open this perspective by click in the table icon located in the top right part of the window:</p>
+<p><img alt="piacopenpersc1" src="_images/apertura_perspectiva.png" /></p>
+<p><img alt="piacopenpersc2" src="_images/Perspectiva_Piacere.png" /></p>
+<p>The next step to setting-up the environment, is to configure the tool’s endpoint. To do this we need to make click on the window menu located in the toolbar and then click on Preferences option.</p>
+<p><img alt="appref" src="_images/apertura_preferencias.png" /></p>
+<p>In the PIACERE menu we can find some options to configure the different tools.</p>
+<p><img alt="pref" src="_images/preferencias.png" /></p>
+<p>You can choose some tool by clicking on the desired tool.</p>
+<p><img alt="conpref" src="_images/contenido_preferencias.png" /></p>
+<p>We can configure host, port, and protocol for each tool. However, for security inspector, we can configure more parameters than in the rest (Enabled, Configured and Entity Type).
+When you finish all configurations, you are ready to make the first PIACERE project.
+If you open the PIACERE view, you can create a PIACERE project by clicking in the new project’s button. Moreover, we add some shortcuts to create some usual files like DOML file.</p>
+<p><img alt="newpro" src="_images/Proyecto_nuevo.png" /></p>
+<p>When creating a new project, two new files appear: firstly, the .doml file where the code will be added; and secondly, a deploymentConfig.json file, which will be used to enter the keys of the different providers.</p>
+<p><img alt="newpro_files" src="_images/jsonconfig.png" /></p>
+<p><img alt="depconfig" src="_images/deploymentConfig.png" /></p>
+</section>
+<section id="ide-usage">
+<h2>IDE usage<a class="headerlink" href="#ide-usage" title="Permalink to this heading"></a></h2>
+<section id="model-files">
+<h3>Model files<a class="headerlink" href="#model-files" title="Permalink to this heading"></a></h3>
+<p>You can convert doml files to domlx and domlx to doml using the pop-up menu. If you click with secondary button in doml file, you can see the “Generate DOMLX Model” in PIACERE submenu and if you do the same in domlx file you can see the “Generate DOML Model” in PIACERE submenu.
+The sequence to make doml or domlx conversion is:</p>
+<p><img alt="subdoml" src="_images/Submenu_doml.png" /></p>
+<p>Name this new file and select “OK”.</p>
+<p><img alt="gendomlx" src="_images/Generador_domlx.png" /></p>
+<p>The following message box will appear.</p>
+<p><img alt="domlxsuc" src="_images/generated_doml_success.png" /></p>
+<p>A new file will appear in the Project Explorer.</p>
+<p><img alt="newfdoml" src="_images/doml_newfile.png" /></p>
+<p>DOML only can be open as text, but DOMLX can be open as tree.</p>
+<p><img alt="domlxfile" src="_images/domlx_file.png" /></p>
+<p><img alt="domlfile" src="_images/doml_file.png" /></p>
+<p>For open the domlx as tree, you need to click on the file with the secondary button and select open with. Now select infrastructure model editor option.</p>
+<p><img alt="tree" src="_images/tree_view.png" /></p>
+<p>Now you can see the model as tree.</p>
+<p><img alt="treedomlx" src="_images/tree_view_doml.png" /></p>
+</section>
+<section id="optimization-kr9">
+<h3>Optimization (KR9)<a class="headerlink" href="#optimization-kr9" title="Permalink to this heading"></a></h3>
+<p>Secondary button in the .doml file and select “PIACERE” and “Optimize DOML”.</p>
+<p><img alt="subdoml2" src="_images/Submenu_doml.png" /></p>
+<p>Then, a new message appears.</p>
+<p><img alt="treedomlx" src="_images/optimized.png" /></p>
+<p>It is possible save the optimization result on the workspace:</p>
+<p><img alt="gopt" src="_images/Guardar_resultado_optimizador.png" /></p>
+<p><img alt="nopt" src="_images/Nombre_resultado_optimizador.png" /></p>
+</section>
+<section id="validation-kr5">
+<h3>Validation (KR5)<a class="headerlink" href="#validation-kr5" title="Permalink to this heading"></a></h3>
+<p>Also, you can validate the DOML It is possible to generate a .dml file if you have a .dmlx file. Click secondary button and select “PIACERE”, “Generate DOML Model”.</p>
+<p>You can choose between Validate model or Validate CSP</p>
+<p><img alt="subdomlx" src="_images/validador1.png" /></p>
+<p>When you save the model validation, a new file is generated in the project that contains the result of the validation.</p>
+<p><img alt="valm" src="_images/validador2.png" /></p>
+<p><img alt="valcsp" src="_images/validador3.png" /></p>
+</section>
+<section id="code-generator-kr3">
+<h3>Code Generator (KR3)<a class="headerlink" href="#code-generator-kr3" title="Permalink to this heading"></a></h3>
+<p>This is used by the same submenu as validation.</p>
+<p><img alt="subdomlx2" src="_images/Submenu_domlx.png" /></p>
+<p>When the IaC Code Generator finish, appears a new file with tar.gz extension. In this file we can see the terraform and the ansible configuration.</p>
+<p><img alt="ngen" src="_images/nombre_generadorIAC.png" /></p>
+<p><img alt="gval" src="_images/tar_file.png" /></p>
+</section>
+<section id="security-scan-kr6-kr7">
+<h3>Security scan (KR6 &amp; KR7)<a class="headerlink" href="#security-scan-kr6-kr7" title="Permalink to this heading"></a></h3>
+<p>To this kind of files, you can run a “Perform Security Scan”. To make this action, first of all you need to generate the iac file using the project submenu.</p>
+<p><img alt="subiac" src="_images/Security_scan1.png" /></p>
+<p><img alt="iacname" src="_images/Security_scan2.png" /></p>
+<p>After this, you can yuse the iac file to perform the security scan using the iac file submenu.</p>
+<p><img alt="subiacf" src="_images/Security_scan3.png" /></p>
+<p><img alt="checks" src="_images/Security_scan4.png" /></p>
+<p>Finally, you got the result as a pop up message.</p>
+<p><img alt="checks" src="_images/scan_success.png" /></p>
+</section>
+<section id="canary-sandbox-environment-kr8">
+<h3>Canary Sandbox Environment (KR8)<a class="headerlink" href="#canary-sandbox-environment-kr8" title="Permalink to this heading"></a></h3>
+<p>For using canary sandbox or catalogue, first we need to open the correct view. To do this, we can use the window toolbar menu and click on show view option.</p>
+<p><img alt="can1" src="_images/canary1.png" /></p>
+<p><img alt="can2" src="_images/canary2.png" /></p>
+<p>In this window you can see all deployments that are currently available. You can add more deployments, or download the current deploy.</p>
+<p><img alt="can3" src="_images/canary3.png" /></p>
+<p>You could “Load Info” of any deployment.</p>
+<p><img alt="can4" src="_images/canary4.png" /></p>
+<p><img alt="can5" src="_images/canary5.png" /></p>
+<p>Download this information at project desktop.</p>
+<p><img alt="can6" src="_images/canary6.png" /></p>
+<p><img alt="can7" src="_images/canary7.png" /></p>
+<p><img alt="can8" src="_images/canary8.png" /></p>
+<p><img alt="can9" src="_images/canary9.png" /></p>
+<p>Visualize the file info is easy with “Text Editor”.</p>
+<p><img alt="can10" src="_images/canary10.png" /></p>
+<p>A .json file that describes a canary, like this example.</p>
+<p><img alt="can11" src="_images/canary11.png" /></p>
+<p>Using this json configuration we can add the deployment to the canary sandbox environment.</p>
+<p><img alt="can12" src="_images/canary12.png" /></p>
+</section>
+<section id="infrastructure-elements-catalogue">
+<h3>Infrastructure Elements Catalogue<a class="headerlink" href="#infrastructure-elements-catalogue" title="Permalink to this heading"></a></h3>
+<p>When you open the infrasctructure elemeents catalogue, you can see a tab with all items of the Catalogue.</p>
+<p><img alt="cat1" src="_images/catalogue1.png" /></p>
+<p>For each of these elements you can show all their properties only with a click.</p>
+<p><img alt="cat2" src="_images/catalogue2.png" /></p>
+</section>
+<section id="runtime-controller-kr11-kr12">
+<h3>Runtime Controller (KR11 &amp; KR12)<a class="headerlink" href="#runtime-controller-kr11-kr12" title="Permalink to this heading"></a></h3>
+<p>In this view you can create a new deployment using the option “Create Deployment”.</p>
+<p><img alt="run1" src="_images/runtime1.png" /></p>
+<p>You only need a valid URL of a repository</p>
+<p><img alt="run2" src="_images/runtime2.png" /></p>
+<p><img alt="run3" src="_images/runtime3.png" /></p>
+<p><img alt="run4" src="_images/runtime4.png" /></p>
+<p>Once it is created you can get more information with secondary button “Get Deployment Details”.</p>
+<p><img alt="run5" src="_images/runtime5.png" /></p>
+<p><img alt="run6" src="_images/runtime6.png" /></p>
+<p>Another option of this view is for launch the Grafana module to control the performance of the deployment.</p>
+<p><img alt="run7" src="_images/runtime7.png" /></p>
+<p>You need to fill the username and password to use it.</p>
+<p><img alt="run9" src="_images/runtime8.png" /></p>
+<p><img alt="run9" src="_images/runtime9.png" /></p>
+<p><img alt="run10" src="_images/runtime10.png" /></p>
+</section>
+<section id="graphic-representation">
+<h3>Graphic representation<a class="headerlink" href="#graphic-representation" title="Permalink to this heading"></a></h3>
+<p>A graphical editor has been implemented that allows the visualization of a subset of the entities that make up the infrastructure layer of the DOMLX. To use this tool right click on a doml file -&gt; New -&gt; Representations File:</p>
+<p><img alt="GR1" src="_images/PIACERE_GR0.png" /></p>
+<p>This new window appears:</p>
+<p><img alt="GR2" src="_images/PIACERE_GR1.png" /></p>
+<p>Then select your DOMLX file source.</p>
+<p><img alt="GR3" src="_images/PIACERE_GR2.png" /></p>
+<p>And enter/select the parent folder.</p>
+<p><img alt="GR4" src="_images/PIACERE_GR3.png" /></p>
+<p>An .aird file will appear in the workspace; double-click on it and the following window will appear</p>
+<p><img alt="GR5" src="_images/PIACERE_GR4.png" /></p>
+<p>In this window we have to add the DOML file to the project dependencies and a new file will appear in the representations column.</p>
+<p><img alt="GR6" src="_images/PIACERE_GR5.png" /></p>
+<p>Then, we need to enable it selecting the abstactInfra Layer.</p>
+<p><img alt="GR7" src="_images/PIACERE_GR6.png" /></p>
+<p>And typing a name for the new graphical representation.</p>
+<p><img alt="GR8" src="_images/PIACERE_GR7.png" /></p>
+<p>Finally, we obtain the following view of the infrastructure layer.</p>
+<p><img alt="GR9" src="_images/PIACERE8.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="implementation.html" class="btn btn-neutral float-left" title="Piacere IDE Implmementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="download.html" class="btn btn-neutral float-right" title="Download" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Prodevelop.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

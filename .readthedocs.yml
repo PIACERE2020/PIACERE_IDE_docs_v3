@@ -1,0 +1,16 @@
+version: 2
+
+build:
+	image: testing
+
+sphinx:
+	configuration: conf.py
+
+python:
+	version: "3.8.10"
+	install:
+		- method: pip
+		  path: prueba
+        - requirements: prueba/docs/requirements.txt
+        
+
